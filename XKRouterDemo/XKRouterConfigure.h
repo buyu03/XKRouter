@@ -10,10 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-static NSString *const PRODUCT_LIST_PATH = @"https://www.buyu.com/productList.html";
-static NSString *const PRODUCT_DETAIL_PATH = @"https://www.buyu.com/productList/productDetail.html";
-static NSString *const PRODUCT_APPLY_PATH = @"https://www.buyu.com/productList/productDetail/Apply.html";
-static NSString *const PROFILE_PATH = @"https://www.buyu.com/profile.html";
+static NSString *const PRODUCT_LIST_PATH = @"xkrouter://buyu.com/productList";
+static NSString *const PRODUCT_DETAIL_PATH = @"xkrouter://buyu.com/productList/productDetail.html";
+static NSString *const PRODUCT_APPLY_PATH = @"xkrouter://buyu.com/productList/productDetail/Apply.html";
+static NSString *const PROFILE_PATH = @"xkrouter://buyu.com/profile.html";
 
 @interface XKRouterConfigure : NSObject
 
