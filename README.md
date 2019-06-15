@@ -4,6 +4,14 @@
 ## 一、XKRouter简介
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XKRouter是一款基于URL标准的、用于iOS系统的路由跳转策略。可以帮助使用者将零散的push/dismiss集中到一个路由核心当中，界面跳转也不再是硬编码的形式。如果与后台配合得当，所有的页面跳转，均可交由后台来控制，这样就可以更好的控制App。
 
+重点重点，敲黑板了啊，目前，cocoapods上已经更新了 **1.0.1** 版本
+直接：
+
+`pod 'XKRouter'`
+
+即可使用！
+
+
 ## 二、XKRouter用法
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在GitHub的[demo](https://github.com/buyu03/XKRouter)里已经给出了对应的例子，操作非常简单，注册完，调用一行代码即可跳转。
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在这里，做一个提醒（敲黑板敲黑板），路由节点的注册务必在跳转之前，建议在XKRouter的基础上封装一层，这一层面向业务，推荐在appdelegate的
