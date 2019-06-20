@@ -1,10 +1,11 @@
 # XKRouter
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XKRouter是一款基于URL标准的、用于iOS系统的路由跳转策略。设计XKRouter最大的目的就是希望以后所有的页面跳转可以随心所欲的控制，不再受限于层级、状态、跳转方式、动画效果。当然了，这是远大的想法，所有美好的建筑，都是一砖一瓦积累出来的，一步一步走，一点一点实现，让它越来越完善。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XKRouter是一款基于URL标准的、用于iOS系统的路由跳转策略。设计XKRouter最大的目的就是希望以后所有的页面跳转可以随心所欲的控制，不再受限于层级、状态、跳转方式、动画效果。当然了，这是一个美好的想法。所有美好的建筑，都是一砖一瓦积累出来的，一步一步走，一点一点实现，让它越来越完善。
 
 ## 一、XKRouter简介
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XKRouter是一款基于URL标准的、用于iOS系统的路由跳转策略。可以帮助使用者将零散的push/dismiss集中到一个路由核心当中，界面跳转也不再是硬编码的形式。如果与后台配合得当，所有的页面跳转，均可交由后台来控制，这样就可以更好的控制App。
 
-重点重点，敲黑板了啊，目前，cocoapods上已经更新了 **1.0.1** 版本。直接：
+重点重点，敲黑板了啊，目前，cocoapods上已经更新了 **1.0.1** 版本
+直接：
 
 `pod 'XKRouter'`
 
@@ -13,6 +14,7 @@
 
 ## 二、XKRouter用法
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在GitHub的[demo](https://github.com/buyu03/XKRouter)里已经给出了对应的例子，操作非常简单，注册完，调用一行代码即可跳转。
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在这里，做一个提醒（敲黑板敲黑板），路由节点的注册务必在跳转之前，建议在XKRouter的基础上封装一层，这一层面向业务，推荐在appdelegate的
 
 `- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions`
@@ -57,8 +59,13 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;下面是 **XKRouter** 提供的两种跳转方案，push和present：
 
 ```
+// 默认动画跳转接口
 + (BOOL)pushToUrl:(NSString *)url sourceViewController:(UIViewController *)sourceViewController parameters:(NSDictionary * _Nullable)parameters;
 + (void)popFromViewController:(UIViewController *)viewController;
+
+// 自定义动画跳转接口
++ (BOOL)pushToUrl:(NSString *)url sourceViewController:(UIViewController *)sourceViewController parameters:(NSDictionary * _Nullable)parameters animationType:(XKPushAnimationType)animationType;
++ (void)popFromViewController:(UIViewController *)viewController animationType:(XKPopAnimationType)animationType;
 
 + (BOOL)presentToUrl:(NSString *)url sourceViewController:(UIViewController *)sourceViewController parameters:(NSDictionary * _Nullable)parameters;
 + (void)dismissFromViewController:(UIViewController *)viewController;
