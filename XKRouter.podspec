@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "XKRouter"
-  spec.version      = "1.0.1"
+  spec.version      = "1.0.2"
   spec.summary      = "XKRouter，一个基于 URL 的iOS路由解决方案"
 
   # This description is used to generate tags and improve search results.
