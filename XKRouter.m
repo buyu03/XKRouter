@@ -8,6 +8,7 @@
 
 #import "XKRouter.h"
 #import "XKRouteNode.h"
+#import "UINavigationController+XKTransition.h"
 
 @interface XKRouter ()
 
@@ -81,6 +82,14 @@ static XKRouter *_routers = nil;
 }
 
 + (BOOL)pushToUrl:(NSString *)url sourceViewController:(UIViewController *)sourceViewController parameters:(NSDictionary * _Nullable)parameters {
+  return [XKRouter pushToUrl:url sourceViewController:sourceViewController parameters:parameters animationType:XKPushAnimationTypeDefault];
+}
+
++ (void)popFromViewController:(UIViewController *)viewController {
+  [XKRouter popFromViewController:viewController animationType:XKPopAnimationTypeDefault];
+}
+
++ (BOOL)pushToUrl:(NSString *)url sourceViewController:(UIViewController *)sourceViewController parameters:(NSDictionary * _Nullable)parameters animationType:(XKPushAnimationType)animationType {
   url = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
   NSURLComponents *urlComponents = [NSURLComponents componentsWithString:url];
   if (!urlComponents) {
@@ -93,12 +102,51 @@ static XKRouter *_routers = nil;
     return NO;
   }
   
-  [sourceViewController.navigationController pushViewController:destinationViewController animated:YES];
+  switch (animationType) {
+    case XKPushAnimationTypeDefault:
+      [sourceViewController.navigationController pushViewController:destinationViewController animated:YES];
+      break;
+    case XKPushAnimationTypeNone:
+      [sourceViewController.navigationController pushViewController:destinationViewController animated:NO];
+      break;
+    case XKPushAnimationTypeFromLeft:
+      [sourceViewController.navigationController pushViewControllerFromLeft:destinationViewController];
+      break;
+    case XKPushAnimationTypeFromBottom:
+      [sourceViewController.navigationController pushViewControllerFromBottom:destinationViewController];
+      break;
+    case XKPushAnimationTypeFromTop:
+      [sourceViewController.navigationController pushViewControllerFromTop:destinationViewController];
+      break;
+    case XKPushAnimationTypeFromFade:
+      [sourceViewController.navigationController pushViewControllerFromFade:destinationViewController];
+      break;
+  }
+  
   return YES;
 }
 
-+ (void)popFromViewController:(UIViewController *)viewController {
-  [viewController.navigationController popViewControllerAnimated:YES];
++ (void)popFromViewController:(UIViewController *)viewController animationType:(XKPopAnimationType)animationType {
+  switch (animationType) {
+    case XKPopAnimationTypeDefault:
+      [viewController.navigationController popViewControllerAnimated:YES];
+      break;
+    case XKPopAnimationTypeNone:
+      [viewController.navigationController popViewControllerAnimated:NO];
+      break;
+    case XKPopAnimationTypeTrendRight:
+      [viewController.navigationController popViewControllerTrendRight];
+      break;
+    case XKPopAnimationTypeTrendTop:
+      [viewController.navigationController popViewControllerTrendTop];
+      break;
+    case XKPopAnimationTypeTrendBottom:
+      [viewController.navigationController popViewControllerTrendBottom];
+      break;
+    case XKPopAnimationTypeTrendFade:
+      [viewController.navigationController popViewControllerTrendFade];
+      break;
+  }
 }
 
 + (BOOL)presentToUrl:(NSString *)url sourceViewController:(UIViewController *)sourceViewController parameters:(NSDictionary * _Nullable)parameters {

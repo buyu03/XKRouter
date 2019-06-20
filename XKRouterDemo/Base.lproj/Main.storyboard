@@ -23,7 +23,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="g3j-z5-wXL"/>
                                 </constraints>
-                                <state key="normal" title="产品列表(push)"/>
+                                <state key="normal" title="产品列表(push from top)"/>
                                 <connections>
                                     <action selector="productListButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cIy-JY-GMa"/>
                                 </connections>
@@ -33,7 +33,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="Vfb-E8-5Pd"/>
                                 </constraints>
-                                <state key="normal" title="支付(push)"/>
+                                <state key="normal" title="支付(push from bottom)"/>
                                 <connections>
                                     <action selector="payButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qOv-iq-DBG"/>
                                 </connections>
@@ -43,7 +43,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="pSe-cX-wT0"/>
                                 </constraints>
-                                <state key="normal" title="产品详情(push)"/>
+                                <state key="normal" title="产品详情(push from fade)"/>
                                 <connections>
                                     <action selector="productDetailButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y6H-af-NBb"/>
                                 </connections>
@@ -53,7 +53,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="Xuz-jw-f3s"/>
                                 </constraints>
-                                <state key="normal" title="产品申领(push)"/>
+                                <state key="normal" title="产品申领(push from left)"/>
                                 <connections>
                                     <action selector="productApplyButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EVo-QQ-Qg9"/>
                                 </connections>
@@ -98,7 +98,6 @@
         <!--Navigation Controller-->
         <scene sceneID="M5m-Qq-Pf2">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CdK-k2-xnJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="eOn-6m-en7" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JXA-Gp-iBx">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -108,6 +107,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dcM-FP-bxM"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CdK-k2-xnJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-237" y="253"/>
         </scene>

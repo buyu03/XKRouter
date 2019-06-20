@@ -13,6 +13,7 @@
 		8426D82522B36E45007D43B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8426D82422B36E45007D43B2 /* Assets.xcassets */; };
 		8426D82822B36E45007D43B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8426D82622B36E45007D43B2 /* LaunchScreen.storyboard */; };
 		8426D82B22B36E45007D43B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426D82A22B36E45007D43B2 /* main.m */; };
+		842A692422BB232F00D25B21 /* UINavigationController+XKTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 842A692322BB232F00D25B21 /* UINavigationController+XKTransition.m */; };
 		8485289D22B37299001F951B /* XKProductListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8485289C22B37299001F951B /* XKProductListViewController.m */; };
 		848528A022B372A7001F951B /* XKProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8485289F22B372A7001F951B /* XKProductDetailViewController.m */; };
 		848528A422B372DB001F951B /* XKProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848528A322B372DB001F951B /* XKProfileViewController.m */; };
@@ -35,6 +36,8 @@
 		8426D82722B36E45007D43B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8426D82922B36E45007D43B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8426D82A22B36E45007D43B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		842A692222BB232F00D25B21 /* UINavigationController+XKTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+XKTransition.h"; sourceTree = SOURCE_ROOT; };
+		842A692322BB232F00D25B21 /* UINavigationController+XKTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+XKTransition.m"; sourceTree = SOURCE_ROOT; };
 		8485289B22B37299001F951B /* XKProductListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XKProductListViewController.h; sourceTree = "<group>"; };
 		8485289C22B37299001F951B /* XKProductListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XKProductListViewController.m; sourceTree = "<group>"; };
 		8485289E22B372A7001F951B /* XKProductDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XKProductDetailViewController.h; sourceTree = "<group>"; };
@@ -136,6 +139,8 @@
 				848528CD22B38F80001F951B /* XKRouteRequest.m */,
 				848528D122B38F80001F951B /* XKRouteResponse.h */,
 				848528CE22B38F80001F951B /* XKRouteResponse.m */,
+				842A692222BB232F00D25B21 /* UINavigationController+XKTransition.h */,
+				842A692322BB232F00D25B21 /* UINavigationController+XKTransition.m */,
 			);
 			name = XKRouter;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 			files = (
 				848528D722B38F80001F951B /* XKRouteNode.m in Sources */,
 				848528A722B373B0001F951B /* XKProductApplyViewController.m in Sources */,
+				842A692422BB232F00D25B21 /* UINavigationController+XKTransition.m in Sources */,
 				8426D82022B36E44007D43B2 /* ViewController.m in Sources */,
 				848528A422B372DB001F951B /* XKProfileViewController.m in Sources */,
 				8426D82B22B36E45007D43B2 /* main.m in Sources */,

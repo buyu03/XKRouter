@@ -16,6 +16,24 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSInteger, XKPushAnimationType) {
+  XKPushAnimationTypeDefault,     // 默认动画
+  XKPushAnimationTypeNone,        // 无动画
+  XKPushAnimationTypeFromLeft,    // 从左往右进入
+  XKPushAnimationTypeFromBottom,  // 从下往上进入
+  XKPushAnimationTypeFromTop,     // 从上往下进入
+  XKPushAnimationTypeFromFade     // 淡入效果
+};
+
+typedef NS_ENUM(NSInteger, XKPopAnimationType) {
+  XKPopAnimationTypeDefault,      // 默认动画
+  XKPopAnimationTypeNone,         // 无动画
+  XKPopAnimationTypeTrendRight,   // 向右退出
+  XKPopAnimationTypeTrendTop,     // 向上退出
+  XKPopAnimationTypeTrendBottom,  // 向下退出
+  XKPopAnimationTypeTrendFade,    // 淡出效果
+};
+
 @interface XKRouter : NSObject
 
 // 获取对应host的路由线路（XXRouterDefinition包含该路由线路下所有路由节点XKRouteNode）
@@ -41,6 +59,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (BOOL)pushToUrl:(NSString *)url sourceViewController:(UIViewController *)sourceViewController parameters:(NSDictionary * _Nullable)parameters;
 + (void)popFromViewController:(UIViewController *)viewController;
+
++ (BOOL)pushToUrl:(NSString *)url sourceViewController:(UIViewController *)sourceViewController parameters:(NSDictionary * _Nullable)parameters animationType:(XKPushAnimationType)animationType;
++ (void)popFromViewController:(UIViewController *)viewController animationType:(XKPopAnimationType)animationType;
 
 + (BOOL)presentToUrl:(NSString *)url sourceViewController:(UIViewController *)sourceViewController parameters:(NSDictionary * _Nullable)parameters;
 + (void)dismissFromViewController:(UIViewController *)viewController;
